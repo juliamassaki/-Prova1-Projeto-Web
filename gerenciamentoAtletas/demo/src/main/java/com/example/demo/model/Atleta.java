@@ -14,6 +14,7 @@ public class Atleta {
     private Long id;
 
     @NotBlank(message = "O nome é obrigatório")
+    @Pattern(regexp = "^[A-Za-zÀ-ÖØ-öø-ÿ ]+$", message = "O nome deve conter apenas letras e espaços")
     private String nome;
 
     @NotNull(message = "A idade é obrigatória")
@@ -61,4 +62,5 @@ public class Atleta {
 
     public String getTipoOlimpico() { return tipoOlimpico; }
     public void setTipoOlimpico(String tipoOlimpico) { this.tipoOlimpico = tipoOlimpico; }
+
 }
